@@ -43,6 +43,9 @@ public class slider extends JComponent{
 
     public void start(boolean strt){
         isLoading = strt;
+        
+            
+       
         animate.start();
     }
 // easing maths for the animations 
@@ -60,7 +63,7 @@ public class slider extends JComponent{
 //Here we set the color, shape and 2d Graphics 
     @Override
     public void paint(Graphics g) {
-            super.paint(g); 
+           super.paint(g); 
         Graphics2D g2 = (Graphics2D)g.create();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         if (isLoading) {
@@ -73,10 +76,10 @@ public class slider extends JComponent{
         hightt +=header;
         g2.setColor(new Color(255,255,255));
         g2.fillRect(0, hightt, getWidth(), getHeight());
-        
-        }
         g2.dispose();
-             
+        }
+        
+              
     }
     
     // In this segment we create the shape with calculations and Cubicurve2d and GeneralPaths
