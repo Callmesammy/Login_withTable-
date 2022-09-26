@@ -25,6 +25,7 @@ public class Panel_Transparent extends JLayeredPane{
 
     private float Alpha =1f;
     public Panel_Transparent() {
+        setOpaque(true);
     }
 
     @Override

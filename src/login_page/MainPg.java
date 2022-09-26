@@ -3,19 +3,48 @@ package login_page;
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import net.miginfocom.swing.MigLayout;
 import org.jdesktop.animation.timing.Animator;
+import org.jdesktop.animation.timing.TimingTarget;
+import org.jdesktop.animation.timing.TimingTargetAdapter;
 
 
 public class MainPg extends javax.swing.JFrame {
 
-   private Animator animator;
+   private Animator animate;
+   private final MigLayout layout;
    
     public MainPg() {
         initComponents();
+        layout = new MigLayout("inset 0", "[fill]", "fill");
+        setLayout(layout);
         // for the backgroud colour and the image and title 
         getContentPane().setBackground(new Color(255,255,255));
         setIconImage(new ImageIcon(getClass().getResource("/icon/page/ict.png")).getImage());
         setTitle("Standard Login with Animation");
+        
+        
+        TimingTarget target = new TimingTargetAdapter(){
+            @Override
+            public void timingEvent(float fraction) {
+               slider1.setMinate(fraction);
+               repaint();
+            }
+
+            @Override
+            public void end() {
+             slider1.setVisible(false);
+             panel_Transparent2.setVisible(true);
+            }
+
+                
+        
+        };
+    animate = new Animator(3000, target);
+    animate.setResolution(0);
+    animate.setAcceleration(0.5f);
+    animate.setDeceleration(0.5f);
+     
     }
 
     /**
@@ -28,7 +57,6 @@ public class MainPg extends javax.swing.JFrame {
     private void initComponents() {
 
         slider1 = new Component.slider();
-        Transparent = new Swing.Panel_Transparent();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         imageAvatar1 = new Swing.ImageAvatar();
@@ -36,11 +64,12 @@ public class MainPg extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         passwordField1 = new Swing.PasswordField();
         button1 = new Swing.Button();
+        panel_Transparent2 = new Swing.Panel_Transparent();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         slider1.setLayout(new java.awt.CardLayout());
-        slider1.add(Transparent, "card3");
 
         jPanel1.setOpaque(false);
 
@@ -83,7 +112,7 @@ public class MainPg extends javax.swing.JFrame {
                 .addGap(139, 139, 139))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(80, 80, 80)
-                .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(80, 80, 80))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
@@ -115,9 +144,9 @@ public class MainPg extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(200, 200, 200)
+                .addGap(271, 271, 271)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(200, 200, 200))
+                .addGap(249, 249, 249))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,6 +157,13 @@ public class MainPg extends javax.swing.JFrame {
         );
 
         slider1.add(jPanel1, "card2");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setText("General Data ");
+        panel_Transparent2.add(jLabel2);
+        jLabel2.setBounds(10, 10, 120, 30);
+
+        slider1.add(panel_Transparent2, "card3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,7 +181,7 @@ public class MainPg extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-      slider1.start(true);
+      animate.start();
        
     }//GEN-LAST:event_button1ActionPerformed
 
@@ -185,12 +221,13 @@ public class MainPg extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Swing.Panel_Transparent Transparent;
     private Swing.Button button1;
     private Swing.ImageAvatar imageAvatar1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private Swing.Panel_Transparent panel_Transparent2;
     private Swing.PasswordField passwordField1;
     private Component.slider slider1;
     private Swing.TextField textField1;
