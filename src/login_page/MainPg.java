@@ -12,13 +12,11 @@ import org.jdesktop.animation.timing.TimingTargetAdapter;
 public class MainPg extends javax.swing.JFrame {
 
    private Animator animate;
-   private final MigLayout layout;
+   private Animator animator;
    
     public MainPg() {
         initComponents();
-        layout = new MigLayout("inset 0", "[fill]", "fill");
-        setLayout(layout);
-        // for the backgroud colour and the image and title 
+          // for the backgroud colour and the image and title 
         getContentPane().setBackground(new Color(255,255,255));
         setIconImage(new ImageIcon(getClass().getResource("/icon/page/ict.png")).getImage());
         setTitle("Standard Login with Animation");
@@ -34,13 +32,36 @@ public class MainPg extends javax.swing.JFrame {
             @Override
             public void end() {
             login.setVisible(false);
+            slider1.setSetpaint(true);
             panel_Transparent1.setVisible(true);
+            panel_Transparent1.setAlpha(0);
+            animator.start();
+            }
+
+                
+        
+        };
+          TimingTarget targ = new TimingTargetAdapter(){
+            @Override
+            public void timingEvent(float fraction) {
+                panel_Transparent1.setAlpha(fraction);
+         
+          
+            }
+
+            @Override
+            public void end() {
+            
             }
 
                 
         
         };
     animate = new Animator(3000, target);
+    animator = new Animator(1500, targ);
+    animator.setResolution(0);
+    animator.setAcceleration(0.5f);
+    animator.setDeceleration(0.5f);
     animate.setResolution(0);
     animate.setAcceleration(0.5f);
     animate.setDeceleration(0.5f);
