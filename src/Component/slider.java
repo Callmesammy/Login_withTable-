@@ -63,10 +63,10 @@ public class slider extends JComponent{
 //Here we set the color, shape and 2d Graphics 
     @Override
     public void paint(Graphics g) {
-           super.paint(g); 
+             
         Graphics2D g2 = (Graphics2D)g.create();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        if (isLoading) {
+       
             g2.setColor(new Color(252, 54, 252));
         int height =(int) (getHeight()*(1f-easeInElastic(minate)) );
         g2.fill(createShape(height, 90, 110,60,150));
@@ -76,8 +76,9 @@ public class slider extends JComponent{
         hightt +=header;
         g2.setColor(new Color(255,255,255));
         g2.fillRect(0, hightt, getWidth(), getHeight());
+            super.paint(g); 
         g2.dispose();
-        }
+       
         
               
     }
