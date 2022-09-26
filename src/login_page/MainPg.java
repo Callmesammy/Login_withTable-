@@ -28,13 +28,13 @@ public class MainPg extends javax.swing.JFrame {
             @Override
             public void timingEvent(float fraction) {
                slider1.setMinate(fraction);
-               repaint();
+          
             }
 
             @Override
             public void end() {
-             slider1.setVisible(false);
-             panel_Transparent2.setVisible(true);
+            login.setVisible(false);
+            panel_Transparent1.setVisible(true);
             }
 
                 
@@ -57,21 +57,24 @@ public class MainPg extends javax.swing.JFrame {
     private void initComponents() {
 
         slider1 = new Component.slider();
-        jPanel1 = new javax.swing.JPanel();
+        login = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         imageAvatar1 = new Swing.ImageAvatar();
         textField1 = new Swing.TextField();
         jLabel1 = new javax.swing.JLabel();
         passwordField1 = new Swing.PasswordField();
         button1 = new Swing.Button();
-        panel_Transparent2 = new Swing.Panel_Transparent();
-        jLabel2 = new javax.swing.JLabel();
+        panel_Transparent1 = new Swing.Panel_Transparent();
+        paneltra = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        header1 = new Component.header();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         slider1.setLayout(new java.awt.CardLayout());
 
-        jPanel1.setOpaque(false);
+        login.setOpaque(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setOpaque(false);
@@ -139,31 +142,63 @@ public class MainPg extends javax.swing.JFrame {
                 .addContainerGap(107, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(271, 271, 271)
+        javax.swing.GroupLayout loginLayout = new javax.swing.GroupLayout(login);
+        login.setLayout(loginLayout);
+        loginLayout.setHorizontalGroup(
+            loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginLayout.createSequentialGroup()
+                .addGap(312, 312, 312)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(249, 249, 249))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        loginLayout.setVerticalGroup(
+            loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        slider1.add(jPanel1, "card2");
+        slider1.add(login, "card2");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("General Data ");
-        panel_Transparent2.add(jLabel2);
-        jLabel2.setBounds(10, 10, 120, 30);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        paneltra.setViewportView(jTable1);
 
-        slider1.add(panel_Transparent2, "card3");
+        jButton1.setText("jButton1");
+
+        javax.swing.GroupLayout panel_Transparent1Layout = new javax.swing.GroupLayout(panel_Transparent1);
+        panel_Transparent1.setLayout(panel_Transparent1Layout);
+        panel_Transparent1Layout.setHorizontalGroup(
+            panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_Transparent1Layout.createSequentialGroup()
+                .addContainerGap(802, Short.MAX_VALUE)
+                .addComponent(jButton1))
+            .addComponent(header1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(paneltra)
+        );
+        panel_Transparent1Layout.setVerticalGroup(
+            panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_Transparent1Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(header1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(paneltra, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
+        );
+
+        slider1.add(panel_Transparent1, "card3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -222,12 +257,15 @@ public class MainPg extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Swing.Button button1;
+    private Component.header header1;
     private Swing.ImageAvatar imageAvatar1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private Swing.Panel_Transparent panel_Transparent2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel login;
+    private Swing.Panel_Transparent panel_Transparent1;
+    private javax.swing.JScrollPane paneltra;
     private Swing.PasswordField passwordField1;
     private Component.slider slider1;
     private Swing.TextField textField1;

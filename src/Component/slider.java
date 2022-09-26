@@ -9,13 +9,8 @@ import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.geom.CubicCurve2D;
 import java.awt.geom.GeneralPath;
-import javax.swing.JComponent;
 import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
-import net.miginfocom.swing.MigLayout;
-import org.jdesktop.animation.timing.Animator;
-import org.jdesktop.animation.timing.TimingTarget;
-import org.jdesktop.animation.timing.TimingTargetAdapter;
+
 
 
 public class slider extends JLayeredPane {
@@ -32,6 +27,7 @@ public class slider extends JLayeredPane {
      */
     public void setMinate(float minate) {
         this.minate = minate;
+        repaint();
     }
 
     private float minate = 1f;
