@@ -28,6 +28,7 @@ public class MainPg extends javax.swing.JFrame {
     private void initComponents() {
 
         slider1 = new Component.slider();
+        Transparent = new Swing.Panel_Transparent();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         imageAvatar1 = new Swing.ImageAvatar();
@@ -39,6 +40,7 @@ public class MainPg extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         slider1.setLayout(new java.awt.CardLayout());
+        slider1.add(Transparent, "card3");
 
         jPanel1.setOpaque(false);
 
@@ -115,7 +117,7 @@ public class MainPg extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(200, 200, 200)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(249, 249, 249))
+                .addGap(200, 200, 200))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +137,7 @@ public class MainPg extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(slider1, javax.swing.GroupLayout.PREFERRED_SIZE, 477, Short.MAX_VALUE)
+            .addComponent(slider1, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
         );
 
         pack();
@@ -183,6 +185,7 @@ public class MainPg extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private Swing.Panel_Transparent Transparent;
     private Swing.Button button1;
     private Swing.ImageAvatar imageAvatar1;
     private javax.swing.JLabel jLabel1;
