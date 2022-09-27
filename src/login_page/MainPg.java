@@ -81,10 +81,10 @@ public class MainPg extends javax.swing.JFrame {
         login = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         imageAvatar1 = new Swing.ImageAvatar();
-        textField1 = new Swing.TextField();
+        userText = new Swing.TextField();
         jLabel1 = new javax.swing.JLabel();
-        passwordField1 = new Swing.PasswordField();
-        button1 = new Swing.Button();
+        passWord = new Swing.PasswordField();
+        cmdButton = new Swing.Button();
         panel_Transparent1 = new Swing.Panel_Transparent();
         paneltra = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -104,23 +104,30 @@ public class MainPg extends javax.swing.JFrame {
         imageAvatar1.setBorderSpace(1);
         imageAvatar1.setImage(new javax.swing.ImageIcon(getClass().getResource("/icon/page/icons8-user-60.png"))); // NOI18N
 
-        textField1.setLabelText("Enter username");
+        userText.setLabelText("Enter username");
+        userText.setLineColor(new java.awt.Color(88, 11, 88));
+        userText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userTextActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 153, 153));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("User");
 
-        passwordField1.setLabelText("Enter password");
+        passWord.setLabelText("Enter password");
+        passWord.setLineColor(new java.awt.Color(88, 11, 88));
 
-        button1.setBackground(new java.awt.Color(88, 11, 88));
-        button1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        button1.setForeground(new java.awt.Color(255, 255, 255));
-        button1.setText("Login");
-        button1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        button1.addActionListener(new java.awt.event.ActionListener() {
+        cmdButton.setBackground(new java.awt.Color(88, 11, 88));
+        cmdButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        cmdButton.setForeground(new java.awt.Color(255, 255, 255));
+        cmdButton.setText("Login");
+        cmdButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cmdButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button1ActionPerformed(evt);
+                cmdButtonActionPerformed(evt);
             }
         });
 
@@ -129,37 +136,39 @@ public class MainPg extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(139, 139, 139)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imageAvatar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(139, 139, 139))
-            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(80, 80, 80)
-                .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cmdButton, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
                 .addGap(80, 80, 80))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(textField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(userText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(passwordField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(passWord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(imageAvatar1, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
+                .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addGap(8, 8, 8)
-                .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addComponent(userText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(passwordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmdButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(107, Short.MAX_VALUE))
         );
 
@@ -229,17 +238,41 @@ public class MainPg extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(slider1, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
+            .addComponent(slider1, javax.swing.GroupLayout.PREFERRED_SIZE, 477, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-      animate.start();
+    private void cmdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdButtonActionPerformed
+        if (!animate.isRunning()) {
+            String user = userText.getText().trim();
+            String pass = String.valueOf(passWord.getPassword());
+            boolean cmdButton =true;
+            if (user.equals("")) {
+                userText.setHelperText("enter username");
+                userText.grabFocus();
+                cmdButton = false;
+            }
+            if (pass.equals("")) {
+                passWord.setHelperText("enter password");
+                if (cmdButton) {
+                    passWord.grabFocus();
+                }
+                cmdButton =false;
+                }
+            if (cmdButton) {
+                animate.start();
+                         }
+              
+        }
        
-    }//GEN-LAST:event_button1ActionPerformed
+    }//GEN-LAST:event_cmdButtonActionPerformed
+
+    private void userTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,7 +310,7 @@ public class MainPg extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Swing.Button button1;
+    private Swing.Button cmdButton;
     private Component.header header1;
     private Swing.ImageAvatar imageAvatar1;
     private javax.swing.JButton jButton1;
@@ -287,8 +320,8 @@ public class MainPg extends javax.swing.JFrame {
     private javax.swing.JPanel login;
     private Swing.Panel_Transparent panel_Transparent1;
     private javax.swing.JScrollPane paneltra;
-    private Swing.PasswordField passwordField1;
+    private Swing.PasswordField passWord;
     private Component.slider slider1;
-    private Swing.TextField textField1;
+    private Swing.TextField userText;
     // End of variables declaration//GEN-END:variables
 }
