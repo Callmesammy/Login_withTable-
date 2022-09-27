@@ -95,7 +95,7 @@ public class slider extends JLayeredPane {
           super.paint(g); 
         }
             
-            super.paint(g);     
+          super.paint(g); 
     }
     
     // In this segment we create the shape with calculations and Cubicurve2d and GeneralPaths
