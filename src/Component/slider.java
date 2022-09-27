@@ -73,6 +73,7 @@ public class slider extends JLayeredPane {
 //Here we set the color, shape and 2d Graphics 
     @Override
     public void paint(Graphics g) {
+      
              if (!setpaint) {
               super.paint(g); 
         }
@@ -85,15 +86,16 @@ public class slider extends JLayeredPane {
         g2.fill(createShape(height, 85, 70,90,57,120));
         int hightt = (int) (getHeight() * (1f-easeOutElastic(getMinate())));
         hightt +=header;
+        
         g2.setColor(new Color(255,255,255));
         g2.fillRect(0, hightt, getWidth(), getHeight());   
         g2.dispose();
-         super.paint(g); 
+        
         if (setpaint) {
-             super.paint(g); 
+          super.paint(g); 
         }
-              
-              
+            
+            super.paint(g);     
     }
     
     // In this segment we create the shape with calculations and Cubicurve2d and GeneralPaths
