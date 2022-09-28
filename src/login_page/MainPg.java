@@ -38,17 +38,16 @@ public class MainPg extends javax.swing.JFrame {
             if (isStart) {
             login.setVisible(false);
             slider1.setSetpaint(false);
-             panel_Transparent1.setAlpha(0);
+            panel_Transparent1.setAlpha(0);
             panel_Transparent1.setVisible(true);
             animator.start();
+           
                 }else{
                     userText.grabFocus();
+                    commandAction(true);
                 }
           
             }
-
-                
-        
         };
           TimingTarget targ = new TimingTargetAdapter(){
             @Override
@@ -78,8 +77,8 @@ public class MainPg extends javax.swing.JFrame {
                 
         
         };
-    animate = new Animator(3000, target);
-    animator = new Animator(1500, targ);
+    animate = new Animator(2000, target);
+    animator = new Animator(1000, targ);
     animator.setResolution(0);
     animator.setAcceleration(0.5f);
     animator.setDeceleration(0.5f);
@@ -89,6 +88,19 @@ public class MainPg extends javax.swing.JFrame {
      
     }
 
+    private void commandAction (boolean action){
+        userText.setEditable(action);
+        passWord.setEditable(action);
+        cmdButton.setEnabled(action);
+    }
+    
+    private void Texted(){
+        userText.setText(" ");
+        userText.setHelperText(" ");
+        passWord.setText("");
+        passWord.setHelperText("");
+        
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -135,6 +147,7 @@ public class MainPg extends javax.swing.JFrame {
 
         passWord.setLabelText("Enter password");
         passWord.setLineColor(new java.awt.Color(88, 11, 88));
+        passWord.setSelectionColor(new java.awt.Color(153, 0, 153));
 
         cmdButton.setBackground(new java.awt.Color(88, 11, 88));
         cmdButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -175,34 +188,34 @@ public class MainPg extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(40, 40, 40)
                 .addComponent(imageAvatar1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addGap(25, 25, 25)
+                .addGap(30, 30, 30)
                 .addComponent(userText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(passWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(cmdButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout loginLayout = new javax.swing.GroupLayout(login);
         login.setLayout(loginLayout);
         loginLayout.setHorizontalGroup(
             loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginLayout.createSequentialGroup()
-                .addGap(312, 312, 312)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(249, 249, 249))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginLayout.createSequentialGroup()
+                .addGap(250, 250, 250)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(250, 250, 250))
         );
         loginLayout.setVerticalGroup(
             loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginLayout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(24, 24, 24))
         );
 
         slider1.add(login, "card2");
@@ -232,7 +245,7 @@ public class MainPg extends javax.swing.JFrame {
         panel_Transparent1Layout.setHorizontalGroup(
             panel_Transparent1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_Transparent1Layout.createSequentialGroup()
-                .addContainerGap(805, Short.MAX_VALUE)
+                .addContainerGap(812, Short.MAX_VALUE)
                 .addComponent(jButton1))
             .addComponent(header1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(paneltra)
@@ -242,9 +255,9 @@ public class MainPg extends javax.swing.JFrame {
             .addGroup(panel_Transparent1Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(header1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(paneltra, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(paneltra, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
@@ -259,7 +272,7 @@ public class MainPg extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(slider1, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
+            .addComponent(slider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -286,6 +299,8 @@ public class MainPg extends javax.swing.JFrame {
                 }
             if (cmButton) {
                 animate.start();
+                commandAction(false);
+               
                          }
               
         }
@@ -298,7 +313,9 @@ public class MainPg extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
            isStart = false;
+           Texted();
            animator.start();
+           
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
